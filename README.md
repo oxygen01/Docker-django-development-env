@@ -4,7 +4,7 @@ Docker Compose to set up and run a Django/PostgreSQL app
 
 ## To start the project
 
-Only for the first time
+To create Django project
 
 ```sh
 $ sudo docker-compose run web django-admin startproject project_name .
