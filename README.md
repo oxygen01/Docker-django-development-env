@@ -52,6 +52,10 @@ Inside the container To install an venv and active it
  $ source venv/bin/activate
 ```
 
+```sh
+ $ pip install -r requirements.txt
+```
+
 ## To shutdown
 
 ```sh
