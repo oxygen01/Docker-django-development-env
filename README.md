@@ -10,12 +10,6 @@ To create Django project
 $ sudo docker-compose run web django-admin startproject project_name .
 ```
 
-If in linux: Change the ownership of the new files
-
-```sh
-$ sudo chown -R $USER:$USER .
-```
-
 Replace the DATABASES = ... with the following:
 
 ```
@@ -36,6 +30,12 @@ DATABASES = {
  $ docker-compose up
 ```
 
+If in linux: Change the ownership of the new files in the host
+
+```sh
+$ sudo chown -R $USER:$USER .
+```
+
 ## Enter the docker container to create env
 
 ```sh
@@ -51,16 +51,28 @@ Inside the container To install an venv and active it
 ```sh
  $ source venv/bin/activate
 ```
-
 ```sh
  $ pip install -r requirements.txt
 ```
+```sh
+ $ chmod -R 777 .
+```
+```sh
+ $ python manage.py migrate
+```
+
+```sh
+ $ python manage.py createsuperuser
+```
+
 
 ## To shutdown
 
 ```sh
 $ docker-compose down
 ```
+
+
 
 ### More info
 
