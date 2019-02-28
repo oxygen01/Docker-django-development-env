@@ -7,13 +7,16 @@ Docker Compose to set up and run a Django/PostgreSQL app
 To create Django project
 
 ```sh
-$ sudo docker-compose run web django-admin startproject project_name .
+$ docker-compose run web django-admin startproject project_name .
 ```
 
 If in linux: Change the ownership of the new files in the host
 
 ```sh
 $ sudo chown -R $USER:$USER .
+```
+```sh
+ $ docker-compose run web chmod -R 777 .
 ```
 
 Replace the DATABASES = ... with the following:
@@ -32,9 +35,6 @@ DATABASES = {
 
 ## Start coding
 
-```sh
- $ sudo docker-compose run web chmod -R 777 .
-```
 ```sh
  $ docker-compose up
 ```
