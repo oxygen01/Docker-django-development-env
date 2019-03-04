@@ -33,6 +33,29 @@ DATABASES = {
 }
 ```
 
+Add corsheaders to your installed apps:
+
+```
+INSTALLED_APPS = (
+    ...
+    'corsheaders',
+    ...
+)
+```
+You will also need to add a middleware class to listen in on responses:
+```
+MIDDLEWARE = [  # Or MIDDLEWARE_CLASSES on Django < 1.10
+    ...
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    ...
+]
+
+CORS_ORIGIN_WHITELIST = (
+    '127.0.0.1:8000'
+)
+```
+
 ## Start coding
 
 ```sh
